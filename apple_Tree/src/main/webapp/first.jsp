@@ -5,11 +5,11 @@
 <head>
 <meta charset="UTF-8">
 <title>Apple Tree</title>
-<style>
+<!-- <style>
 	div {
 		border: 1px solid red;
 	}
-</style>
+</style> -->
 </head>
 <body>
 

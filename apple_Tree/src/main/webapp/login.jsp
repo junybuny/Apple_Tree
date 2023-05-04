@@ -12,7 +12,7 @@
 		if(msg == null)
 			msg="";
 	%>
-<a href = "first.jsp"><h2>🍎Apple Tree</h2></a>
+<a href = "first.jsp">🍎Apple Tree</a>
 	
 <div style="text-align: center;">
 	
@@ -20,12 +20,12 @@
 	<p><%=msg%></p>
 	
 		<form action="login.do" method="post">
-				<p>ID : <input type="text" name="id" /></p>
-				<p>비밀번호 : <input type="password" name="passwd" /></p>
+				<p>ID<br/><input type="text" name="id" /></p>
+				<p>비밀번호<br/><input type="password" name="passwd" /></p>
 				
 				<br/>
-				<input type="submit" value="로그인" />
-				<a href = "memberJoin.jsp">회원가입</a>
+				<input type="submit" value="로그인" /> &nbsp;&nbsp;
+				<input type="button" value="회원가입" onClick="location.href='memberJoin.jsp'"/>
 		</form>
 		
 </div>	

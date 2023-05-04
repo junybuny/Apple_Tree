@@ -8,7 +8,7 @@
 </head>
 <body>
 
-<a href = ""><h2>🍎Apple Tree</h2></a>
+<a href = "">🍎Apple Tree</a>
 <h2>메인페이지</h2>
 	
 </body>
