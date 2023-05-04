@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <title>CodePen - CSS Grid calendar</title>
+  <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Montserrat:100,300,400,500,700"/><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
+<link rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css'><link rel="stylesheet" href="./style.css">
+
+</head>
+<body>
+  <div class="wrapper">
+    <main>
+      <img src="https://cdn0.iconfinder.com/data/icons/farming-and-gardening-5/64/05-botanical-yard-fruit_tree-gardening-garden-apple-512.png" alt="avatar">
+    <h1>방명록 </h1>
+    <h3>내용 </h3>
+    <hr/>
+    <form method="post" action="/post">
+        <input type="text" name="title" placeholder="Enter Title"><br/>
+        <textarea name="content" cols="30" rows="10"></textarea><br/>
+        <button type="submit">방명록 Upload</button>
+    </form>
+</main>
+<sidebar>
+  <div class="logo">볶음밥 
+    <img src="https://cdn0.iconfinder.com/data/icons/fall-6/64/apple-fruit-healty-food-30.png" alt="avatar">
+  </div>
+  <div class="avatar">
+    <div class="avatar__img">
+      <img src="https://cdn4.iconfinder.com/data/icons/linecon/512/photo-50.png" alt="avatar">
+    </div>
+    <div class="avatar__name">손윤정</div>
+  </div>
+  <nav class="menu">
+    <a class="menu__item menu__item--active" href="#">
+      <i class="menu__icon fa fa-home"></i>
+      <span class="menu__text">방명록</span>
+    </a>
+    <a class="menu__item" href="#">
+      <i class="menu__icon fa fa-envelope"></i>
+      <span class="menu__text">일기</span>
+    </a>
+    <a class="menu__item" href="#">
+      <i class="menu__icon fa fa-list"></i>
+      <span class="menu__text">독서리스트</span>
+    </a>
+    <a class="menu__item" href="#">
+      <i class="menu__icon fa fa-calendar"></i>
+      <span class="menu__text">일정</span>
+     </a>
+    </nav>
+    <div class="copyright">copyright &copy; 2023</div>
+  </sidebar>
+</div>
+
+</body>
+</html>
