@@ -1,7 +1,6 @@
 package com.controller;
 
 import java.io.IOException;
-import java.lang.ModuleLayer.Controller;
 import java.sql.SQLException;
 
 import javax.servlet.ServletException;
@@ -10,6 +9,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import com.board.controller.boardWriteController;
 import com.login.controller.joinController;
 import com.login.controller.loginController;
 
@@ -28,7 +28,6 @@ public class FrontController extends HttpServlet {
         super();
         // TODO Auto-generated constructor stub
     }
-
    /**
     * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
     */
@@ -56,25 +55,31 @@ public class FrontController extends HttpServlet {
    }
    
    protected void doProcess(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException, SQLException {
-      // TODO Auto-generated method stub
-      
       //1.요청파악
       String requestURI = request.getRequestURI(); // /Autumn/loginPro.do
       String contextPath = request.getContextPath();// /Autumn
       
       String command = requestURI.substring(contextPath.length()); // /loginPro.do
-      loginController loginAction = null;
-      joinController joinAction = null;
+//      loginController loginAction = null;
+//      joinController joinAction = null;
       
+      Controller action;
+      
+      // 추가하고 싶을땐 .do 는  action = new loginController(); 로 간다
       //2.각 요청별로 연결될 비즈니스 로직 호출
       if(command.equals("/login.do")) {
-    	  loginAction = new loginController();
-    	  loginAction.execute(request, response);
+    	  action = new loginController();
+    	  action.execute(request, response);
       }
       if(command.equals("/join.do")) {
-    	  joinAction = new joinController();
-    	  joinAction.execute(request, response);
-       }   
+    	  action = new joinController();
+    	  action.execute(request, response);
+       }
+      if(command.equals("/boardWrite.do")) {
+    	  action = new boardWriteController();
+    	  action.execute(request, response);
+       }
+     
       
       //3.포워딩
    }
