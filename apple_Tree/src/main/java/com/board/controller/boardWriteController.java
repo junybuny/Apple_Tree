@@ -12,8 +12,6 @@ import com.board.service.boardService;
 import com.board.vo.Board;
 import com.controller.Controller;
 import com.controller.HttpUtil;
-import com.login.service.loginService;
-import com.member.vo.Member;
 
 public class boardWriteController implements Controller {
 	

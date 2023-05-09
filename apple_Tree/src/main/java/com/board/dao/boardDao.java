@@ -5,12 +5,8 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
-import javax.naming.InitialContext;
-import javax.sql.DataSource;
-
 import com.board.vo.Board;
 import com.dao.DBcon;
-import com.member.vo.Member;
 
 public class boardDao {
 	
