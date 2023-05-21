@@ -9,7 +9,7 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 import com.board.service.boardService;
-import com.board.vo.Board;
+import com.board.vo.boardVo;
 import com.controller.Controller;
 import com.controller.HttpUtil;
 
@@ -37,7 +37,7 @@ public class boardWriteController implements Controller {
 			return;
 		}
 
-		Board board = new Board();
+		boardVo board = new boardVo();
 		board.setTitle(title);
 		board.setContent(content);
 		board.setWriter(writer);

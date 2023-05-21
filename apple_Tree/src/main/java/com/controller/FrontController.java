@@ -10,7 +10,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import com.board.controller.boardWriteController;
-import com.login.controller.joinController;
+import com.join.controller.joinController;
 import com.login.controller.loginController;
 
 

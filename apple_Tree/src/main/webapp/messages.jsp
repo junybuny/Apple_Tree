@@ -1,3 +1,4 @@
+
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <!DOCTYPE html>
@@ -8,10 +9,8 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
 <link rel="stylesheet" href="./css/style.css">
 
- <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/3.4.0/fullcalendar.min.css'>
-<link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0-beta.2/css/bootstrap.css'>
-<link rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css'><link rel="stylesheet" href="./css/calenderstyle.css">
-<script src="https://cdnjs.cloudflare.com/ajax/libs/prefixfree/1.0.7/prefixfree.min.js"></script>
+ <link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet"><link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css'><link rel="stylesheet" href="css/messagesstyle.css">
 
 
 </head>
@@ -49,12 +48,12 @@
             <path d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z" />
           </svg>
           Favourites</a>
-        <a href="messages.jsp" class="item-link" id="pageLink">
+        <a href="messages.jsp" class="item-link active" id="pageLink">
           <svg class="link-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-play">
             <path d="M5 3l14 9-14 9V3z" />
           </svg>
           My Daybook</a>
-        <a href="calender.jsp" class="item-link active" id="pageLink">
+        <a href="calender.jsp" class="item-link" id="pageLink">
           <svg class="link-icon" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-list">
             <path d="M8 6h13M8 12h13M8 18h13M3 6h.01M3 12h.01M3 18h.01" />
           </svg>
@@ -138,139 +137,182 @@
         <button class="action-buttons btn-upload">Upload</button>
       </div>
     </div>
-<!-- partial:index.partial.html -->
-<main>
-<div class="site-header autocomplete">
-  <div class="input-wrapper">
-    <input type="text" placeholder="Search" class="search-field">
-      <span class="close">Cancel</span>
-
-    <div class="focus-background"></div>
-  </div>
-   <div class="dialog">   
-  </div>
-  
-</div>
-
-<div id='calendar'></div>
-
-<div id="calendar-popup">
- 
-  <form id="event-form">
-     <div class='calander_popip_title'><i class="fa fa-calendar" aria-hidden="true"></i>
-Add Event</div>
-    <ul>
-      <li>
-        <label for="event-start"><i class="fa fa-bell-o" aria-hidden="true"></i>
-
-From</label>
-        <input id="event-start"  class='form-control' type="datetime-local" name="start"/>
-      </li>
-      <li>
-        <label for="event-end"><i class="fa fa-bell-slash" aria-hidden="true"></i>
-
-To</label>
-        <input id="event-end"  class='form-control' type="datetime-local" name="end"/>
-      </li>
-      <li>
-        <label for="event-title"><i class="fa fa-calendar-minus-o" aria-hidden="true"></i>
-Event Name</label>
-        <input id="event-title"  class='form-control' type="text" name="title"/>
-      </li>
-      <li>
-        <label for="event-location"><i class="fa fa-map-marker" aria-hidden="true"></i>
-Location</label>
-        <input id="event-location"   class='form-control' type="text" name="location"/>
-      </li>
-      <li>
-        <label for="event-details"><i class="fa fa-info-circle" aria-hidden="true"></i>
-Description</label>
-        <textarea id="event-details"  class='form-control' name="details"></textarea>
-      </li>
-      <div class="button">
-        <input type="submit"  class='form-control submit_btn'/>
+     <main class='project'>
+    <div class='project-info'>
+      <h1>Daybook</h1>
+      <div class='project-participants'>
+        <span></span>
+        <span></span>
+        <span></span>
+        <button class='project-participants__add'>Add Participant</button>
+          
+        </div>
+    </div>
+    <div class='project-tasks'>
+      <div class='project-column'>
+        <div class='project-column-heading'>
+          <h2 class='project-column-heading__title'>일기</h2><button class='project-column-heading__options'><i class="fas fa-ellipsis-h"></i></button>
+        </div>
+        <div class='task' draggable='true'>
+          <div class='task__tags'><span class='task__tag task__tag--copyright'>Today</span><button class='task__options'><i class="fas fa-ellipsis-h"></i></button></div>
+          <p>오늘 너무너무 재미있다</p>
+          <div class='task__stats'>
+            <span><time datetime="202-11-24T20:00:00"><i class="fas fa-flag"></i>Nov 24</time></span>
+            <span><i class="fas fa-comment"></i>3</span>
+            <span><i class="fas fa-paperclip"></i>7</span>
+            <span class='task__owner'></span>
+          </div>
+        </div>
+        
+                <div class='task' draggable='true'>
+          <div class='task__tags'><span class='task__tag task__tag--design'>UI Design</span><button class='task__options'><i class="fas fa-ellipsis-h"></i></button></div>
+          <p>안녕</p>
+          <div class='task__stats'>
+            <span><time datetime="2023-05-08T20:00:00"><i class="fas fa-flag"></i>Nov 24</time></span>
+            <span><i class="fas fa-comment"></i>2</span>
+            <span><i class="fas fa-paperclip"></i>5</span>
+            <span class='task__owner'></span>
+          </div>
+        </div>
+        
+                <div class='task' draggable='true'>
+          <div class='task__tags'><span class='task__tag task__tag--copyright'>Today</span><button class='task__options'><i class="fas fa-ellipsis-h"></i></button></div>
+          <p>찰흙이</p>
+          <div class='task__stats'>
+            <span><time datetime="2023-05-08T20:00:00"><i class="fas fa-flag"></i>Nov 24</time></span>
+            <span><i class="fas fa-comment"></i>2</span>
+            <span><i class="fas fa-paperclip"></i>3</span>
+            <span class='task__owner'></span>
+          </div>
+        </div>
       </div>
-    </ul>
-  </form>
-  
-  <div id="event">
-    <header></header>
-    <ul>
-    <li class="start-time"> 
-      <p>
-  Start at</p>
-        <time></time>
-      </li>
-       <li class="end-time">
-      <p>
- End</p>
-        <time></time>
-      </li>
-      <li>
-        <p>
-          <i class="fa fa-map-marker" aria-hidden="true"></i>Location</p>
-<p class="location"></p>
-      </li>
-      <li>
-        <p><i class="fa fa-info" aria-hidden="true"></i>
-Details:</p>
-        <p class="details"></p>
-      </li>
-    </ul>
-   
-  </div>
-
-  <div class="prong">
-    <div class="bottom-prong-dk"></div>
-    <div class="bottom-prong-lt"></div>
-  </div>
-</div>
-
-
-<div class='modle' id='simplemodal'>
-  <div class='modle-continer'>
-      <form id="edit-form">
-
-    <div class='modal-header'>
-        <span class='close-btn' id='close-btnid'>&times</span>
-      <h2>Edit Event</h2>
-    </div>
-   <div class='modal-body'>
-  
-     <lable for='eventname'>Event Name</lable>
-     <input type='text' name='eventname' id='eventname' class='form-control'>
-     <lable for='location'>Location</lable>
-     <input type='text' name='location' id='location' class='form-control'>
-     
-     <label for="event-start">From</label><input id="eventstart" type="datetime-local" name="start" class='form-control'/>
-     
-     <label for="event-end">To</label>
-        <input id="eventend" type="datetime-local" name="end" class='form-control'/>
-      <label for="event-details">Details</label>
-     <textarea id="eventdetails" type='text' name="details"  class='form-control'></textarea>
-    
-    </div>
-    <div class='modal-footer'>
-      <button type='submit' class='btn btn-info'>save</button>
-      <button class='btn btn-dafault'>cancel</button>
+      <div class='project-column'><div class='project-column-heading'>
+          <h2 class='project-column-heading__title'>특별한 날</h2><button class='project-column-heading__options'><i class="fas fa-ellipsis-h"></i></button>
+        </div>
+          
+        <div class='task' draggable='true'>
+          <div class='task__tags'><span class='task__tag task__tag--design'>Important</span><button class='task__options'><i class="fas fa-ellipsis-h"></i></button></div>
+          <p>요즘 날씨 좋다</p>
+          <div class='task__stats'>
+            <span><time datetime="2023-05-08T20:00:00"><i class="fas fa-flag"></i>Nov 24</time></span>
+            <span><i class="fas fa-comment"></i>5</span>
+            <span><i class="fas fa-paperclip"></i>5</span> 
+            <span class='task__owner'></span>
+          </div>
+        </div>
+        
+        <div class='task' draggable='true'>
+          <div class='task__tags'><span class='task__tag task__tag--illustration'>before</span><button class='task__options'><i class="fas fa-ellipsis-h"></i></button></div>
+          <p>뿌뜻하다 우와.</p>
+          <div class='task__stats'>
+            <span><time datetime="2023-05-08T20:00:00"><i class="fas fa-flag"></i>Nov 24</time></span>
+            <span><i class="fas fa-comment"></i>8</span>
+            <span><i class="fas fa-paperclip"></i>7</span>
+            <span class='task__owner'></span>
+          </div>
+        </div>
+        
+        <div class='task' draggable='true'>
+          <div class='task__tags'><span class='task__tag task__tag--copyright'>Today</span><button class='task__options'><i class="fas fa-ellipsis-h"></i></button></div>
+          <p>모찌는 너무 귀엽다</p>
+          <div class='task__stats'>
+            <span><time datetime="2023-05-08T20:00:00"><i class="fas fa-flag"></i>Nov 24</time></span>
+            <span><i class="fas fa-comment"></i>12</span>
+            <span><i class="fas fa-paperclip"></i>11</span>
+            <span class='task__owner'></span>
+          </div>
+        </div>
+        
+        <div class='task' draggable='true'>
+          <div class='task__tags'><span class='task__tag task__tag--illustration'>before</span><button class='task__options'><i class="fas fa-ellipsis-h"></i></button></div>
+          <p>곧 공대 체육대회가 열린다.</p>
+          <div class='task__stats'>
+            <span><time datetime="2023-05-08T20:00:00"><i class="fas fa-flag"></i>Nov 24</time></span>
+            <span><i class="fas fa-comment"></i>4</span>
+            <span><i class="fas fa-paperclip"></i>8</span>
+            <span class='task__owner'></span>
+          </div>
+        </div>
+        
+        </div>
+      <div class='project-column'><div class='project-column-heading'>
+          <h2 class='project-column-heading__title'></h2><button class='project-column-heading__options'><i class="fas fa-ellipsis-h"></i></button>
+        </div>
+          
+        <div class='task' draggable='true'>
+          <div class='task__tags'><span class='task__tag task__tag--copyright'>Today</span><button class='task__options'><i class="fas fa-ellipsis-h"></i></button></div>
+          <p>요즘 날씨가 무척이나 맑다.</p>
+          <div class='task__stats'>
+            <span><time datetime="2023-05-08T20:00:00"><i class="fas fa-flag"></i>Nov 24</time></span>
+            <span><i class="fas fa-comment"></i>4</span>
+            <span><i class="fas fa-paperclip"></i>0</span>
+            <span class='task__owner'></span>
+          </div>
+        </div>
+        <div class='task' draggable='true'>
+          <div class='task__tags'><span class='task__tag task__tag--design'>Important</span><button class='task__options'><i class="fas fa-ellipsis-h"></i></button></div>
+          <p>일기 작성 하는 곳 입니다.</p>
+          <div class='task__stats'>
+            <span><time datetime="2023-05-08T20:00:00"><i class="fas fa-flag"></i>Nov 24</time></span>
+            <span><i class="fas fa-comment"></i>0</span>
+            <span><i class="fas fa-paperclip"></i>5</span>
+            <span class='task__owner'></span>
+          </div>
+        </div>
+        <div class='task' draggable='true'>
+          <div class='task__tags'><span class='task__tag task__tag--illustration'>before</span><button class='task__options'><i class="fas fa-ellipsis-h"></i></button></div>
+          <p>안녕하세요.</p>
+          <div class='task__stats'>
+            <span><time datetime="2023-05-08T20:00:00"><i class="fas fa-flag"></i>Nov 24</time></span>
+            <span><i class="fas fa-comment"></i>2</span>
+            <span><i class="fas fa-paperclip"></i>2</span>
+            <span class='task__owner'></span>
+          </div>
+        </div>
+        </div>
+      <div class='project-column'><div class='project-column-heading'>
+          <h2 class='project-column-heading__title'></h2><button class='project-column-heading__options'><i class="fas fa-ellipsis-h"></i></button>
+        </div>
+        
+         <div class='task' draggable='true'>
+          <div class='task__tags'><span class='task__tag task__tag--illustration'>before</span><button class='task__options'><i class="fas fa-ellipsis-h"></i></button></div>
+          <p>언녕.</p>
+          <div class='task__stats'>
+            <span><time datetime="2023-05-08T20:00:00"><i class="fas fa-flag"></i>Nov 24</time></span>
+            <span><i class="fas fa-comment"></i>12</span>
+            <span><i class="fas fa-paperclip"></i>5</span>
+            <span class='task__owner'></span>
+          </div>
+        </div>
+        
+         <div class='task' draggable='true'>
+          <div class='task__tags'><span class='task__tag task__tag--illustration'>before</span><button class='task__options'><i class="fas fa-ellipsis-h"></i></button></div>
+          <p>안녕.</p>
+          <div class='task__stats'>
+            <span><time datetime="2023-05-08T20:00:00"><i class="fas fa-flag"></i>Nov 24</time></span>
+            <span><i class="fas fa-comment"></i>3</span>
+            <span><i class="fas fa-paperclip"></i>7</span>
+            <span class='task__owner'></span>
+          </div>
+        </div>
+        
+         <div class='task' draggable='true'>
+          <div class='task__tags'><span class='task__tag task__tag--copyright'>Today
+          <div class='task__stats'>
+            <span><time datetime="2021-11-24T20:00:00"><i class="fas fa-flag"></i>Nov 24</time></span>
+            <span><i class="fas fa-comment"></i>8</span>
+            <span><i class="fas fa-paperclip"></i>16</span>
+            <span class='task__owner'></span>
+          </div>
+        </div>
+        
+        </div>
       
     </div>
-    </form>
-  </div>
   </main>
-  
-</div>
-
-<div id='search_result'>result</div>
-<button class='btn btn-primary'>Add Events</button>
 <!-- partial -->
   <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js'></script>
 <script src='https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js'></script><script  src="./js/script.js"></script>
-  <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js'></script>
-<script src='https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.18.0/moment.min.js'></script>
-<script src='https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/3.2.0/fullcalendar.min.js'></script>
-<script src='https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js'></script>
-<script src='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js'></script><script  src="./js/calenderscript.js"></script>
 
 </body>
 </html>

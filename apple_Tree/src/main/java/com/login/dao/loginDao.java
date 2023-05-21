@@ -6,7 +6,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 
 import com.dao.DBcon;
-import com.member.vo.Member;
+import com.member.vo.memberVo;
 
 public class loginDao {
 
@@ -50,7 +50,7 @@ public class loginDao {
 		}
 	}
 
-	public boolean memberLogin(Member member) throws SQLException {
+	public boolean memberLogin(memberVo member) throws SQLException {
 		
 		// 똑같이 만들어 =========
 		Connection con = DBcon.getConnection();
@@ -77,7 +77,7 @@ public class loginDao {
 		if (rs.next()) {
 			loginResult = true;
 		}
-
+		
 		// Y 아니면 N
 		return loginResult;
 

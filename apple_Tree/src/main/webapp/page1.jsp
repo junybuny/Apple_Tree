@@ -7,12 +7,11 @@
   <title>CodePen - Internal Video Platform UI</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
 <link rel="stylesheet" href="./css/style.css">
+<link rel="stylesheet" href="./mainpage.css">
 
- <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/3.4.0/fullcalendar.min.css'>
-<link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0-beta.2/css/bootstrap.css'>
-<link rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css'><link rel="stylesheet" href="./css/calenderstyle.css">
-<script src="https://cdnjs.cloudflare.com/ajax/libs/prefixfree/1.0.7/prefixfree.min.js"></script>
-
+<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+<link href="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote-lite.min.css" rel="stylesheet">
+<script src="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote-lite.min.js"></script></head>
 
 </head>
 <body>
@@ -38,7 +37,7 @@
         </div>
       </div>
         <div class="page-link-list">
-        <a href="page1.jsp" class="item-link" id="pageLink">
+        <a href="page1.jsp" class="item-link active" id="pageLink">
           <svg class="link-icon" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="feather feather-home" viewBox="0 0 24 24">
             <defs />
             <path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z" />
@@ -54,7 +53,7 @@
             <path d="M5 3l14 9-14 9V3z" />
           </svg>
           My Daybook</a>
-        <a href="calender.jsp" class="item-link active" id="pageLink">
+        <a href="calender.jsp" class="item-link" id="pageLink">
           <svg class="link-icon" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-list">
             <path d="M8 6h13M8 12h13M8 18h13M3 6h.01M3 12h.01M3 18h.01" />
           </svg>
@@ -112,7 +111,8 @@
       </button>
       <div class="search-part-wrapper">
         <input class="search-input" type="text" placeholder="Search videos...">
-        <a class="menu-links" href="#">Logout</a>
+        <a class="menu-links" href="./member/login.jsp">Login</a>
+        <a class="menu-links" href="./member/join.jsp">Join</a>
         <button class="more-button">
           <svg width="24" height="24" fill="none" stroke="#51a380" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="feather feather-more-vertical">
             <defs />
@@ -122,7 +122,8 @@
           </svg>
         </button>
         <ul class="more-menu-list hide">
-          <li><a href="#">Logout</a></li>
+          <li><a href="./member/login.jsp">Login</a></li>
+          <li><a href="./member/Join.jsp">Join</a></li>
           <li> <button class="action-buttons btn-record">Record</button></li>
           <li><button class="action-buttons btn-upload">Upload</button></li>
         </ul>
@@ -138,139 +139,101 @@
         <button class="action-buttons btn-upload">Upload</button>
       </div>
     </div>
-<!-- partial:index.partial.html -->
-<main>
-<div class="site-header autocomplete">
-  <div class="input-wrapper">
-    <input type="text" placeholder="Search" class="search-field">
-      <span class="close">Cancel</span>
-
-    <div class="focus-background"></div>
-  </div>
-   <div class="dialog">   
-  </div>
-  
-</div>
-
-<div id='calendar'></div>
-
-<div id="calendar-popup">
- 
-  <form id="event-form">
-     <div class='calander_popip_title'><i class="fa fa-calendar" aria-hidden="true"></i>
-Add Event</div>
-    <ul>
-      <li>
-        <label for="event-start"><i class="fa fa-bell-o" aria-hidden="true"></i>
-
-From</label>
-        <input id="event-start"  class='form-control' type="datetime-local" name="start"/>
-      </li>
-      <li>
-        <label for="event-end"><i class="fa fa-bell-slash" aria-hidden="true"></i>
-
-To</label>
-        <input id="event-end"  class='form-control' type="datetime-local" name="end"/>
-      </li>
-      <li>
-        <label for="event-title"><i class="fa fa-calendar-minus-o" aria-hidden="true"></i>
-Event Name</label>
-        <input id="event-title"  class='form-control' type="text" name="title"/>
-      </li>
-      <li>
-        <label for="event-location"><i class="fa fa-map-marker" aria-hidden="true"></i>
-Location</label>
-        <input id="event-location"   class='form-control' type="text" name="location"/>
-      </li>
-      <li>
-        <label for="event-details"><i class="fa fa-info-circle" aria-hidden="true"></i>
-Description</label>
-        <textarea id="event-details"  class='form-control' name="details"></textarea>
-      </li>
-      <div class="button">
-        <input type="submit"  class='form-control submit_btn'/>
+    <div class="page-right-content">
+      <div class="content-line content-line-hero">
+        <div class="line-header">
+          <span class="header-text">New Uploads</span>
+        </div>
+        <div class="slider-wrapper owl-carousel owl-theme" id="owl-slider-1">
+          <div class="item hero-img-wrapper img-1">
+            <div class="upload-text-wrapper">
+              <p class="upload-text-header"> </p>
+              <p class="upload-text-info"> <span></span></p>
+            </div>
+            <img src="https://img.freepik.com/free-vector/isaac-newton-sitting-under-apple-tree_1308-96274.jpg?w=2000&t=st=1684598172~exp=1684598772~hmac=afac7578fb82aafaa0820146e5f33be77c5d488dac50a999802da9183a5b8dd6" alt="SlideShow">
+          </div>
+          <div class="item hero-img-wrapper img-2">
+            <div class="upload-text-wrapper">
+              <p class="upload-text-header"></p>
+              <p class="upload-text-info"> <span></span></p>
+            </div>
+            <img src="https://img.freepik.com/free-vector/vector-seamless-apple-pattern-pastel-background_53876-110525.jpg?w=1800&t=st=1684600355~exp=1684600955~hmac=a8a34f3b71998d8b61d72776e8a9c9a017ad3f7a553376647b1940e3250d5238" alt="SlideShow">
+          </div>
+          <div class="item hero-img-wrapper img-3">
+            <div class="upload-text-wrapper">
+              <p class="upload-text-header"></p>
+              <p class="upload-text-info"> <span></span></p>
+            </div>
+            <img src="https://img.freepik.com/free-vector/peach-background-vector-cute-desktop-wallpaper_53876-136871.jpg?w=1800&t=st=1684600385~exp=1684600985~hmac=801b73f57eeef7ffd32b18e8c338b9a27da3927dfd255f4f68630ccb19731630" alt="SlideShow">
+          </div>
+        </div>
       </div>
-    </ul>
-  </form>
-  
-  <div id="event">
-    <header></header>
-    <ul>
-    <li class="start-time"> 
-      <p>
-  Start at</p>
-        <time></time>
-      </li>
-       <li class="end-time">
-      <p>
- End</p>
-        <time></time>
-      </li>
-      <li>
-        <p>
-          <i class="fa fa-map-marker" aria-hidden="true"></i>Location</p>
-<p class="location"></p>
-      </li>
-      <li>
-        <p><i class="fa fa-info" aria-hidden="true"></i>
-Details:</p>
-        <p class="details"></p>
-      </li>
-    </ul>
-   
-  </div>
-
-  <div class="prong">
-    <div class="bottom-prong-dk"></div>
-    <div class="bottom-prong-lt"></div>
-  </div>
-</div>
-
-
-<div class='modle' id='simplemodal'>
-  <div class='modle-continer'>
-      <form id="edit-form">
-
-    <div class='modal-header'>
-        <span class='close-btn' id='close-btnid'>&times</span>
-      <h2>Edit Event</h2>
+      <div class="content-line content-line-list">
+        <div class="line-header">
+          <span class="header-text">Tree</span>
+        </div>
+           <div class="wrapper">
+    <main role="main" class="container">
+      <center>
+        <div class="center">
+          <div class="leaf" id="leaf" href="#" data-toggle="modal" data-target="#memoModal"><img src="./img/leaf.png"></div>
+          <div class="tree"><img src="./img/tree.png"></div>
+        </div>
+          <div class="popup" id="modal">
+            <div class="title">방명록 작성</div>
+            <div class="content">
+              <input text>
+            </div>
+            <div class="cmd">
+              <input type="button" id="btnclose" class="button" value="닫기">
+              <input type="button" id="btnsubmit" class="button" value="등록">
+            </div>
+          </div>
+      </center>
+        <bottom>
+          <div align="left">
+            <div class="schedulelist">
+            <span>다가오는 일정</span>
+            <span>오늘의 일정</span>
+            </div>
+            <div class="schedule">
+              <span>5/10</span>
+              <span>캡스톤 보고서 제출</span>
+            </div>
+            <div class="schedule">
+              <span>5/10</span>
+              <span>준 소희 모찌 보러오는 날</span>
+            </div>
+          </div>
+          <div align="right">
+            <div class="friendlist">
+              <span>친구 목록</span>
+              <span>다가오는 일정</span>
+            </div>
+              <div class="schedule">
+                <span>준</span>
+                <span>5/12<span>
+                <span>인공지능소프트웨어 MT</span>
+              </div>
+              <div class="schedule">
+                <span>소희</span>
+                <span>5/17<span>
+                <span>캡스톤 11주차 기능 구현</span>
+              </div>
+          </bottom>
     </div>
-   <div class='modal-body'>
-  
-     <lable for='eventname'>Event Name</lable>
-     <input type='text' name='eventname' id='eventname' class='form-control'>
-     <lable for='location'>Location</lable>
-     <input type='text' name='location' id='location' class='form-control'>
-     
-     <label for="event-start">From</label><input id="eventstart" type="datetime-local" name="start" class='form-control'/>
-     
-     <label for="event-end">To</label>
-        <input id="eventend" type="datetime-local" name="end" class='form-control'/>
-      <label for="event-details">Details</label>
-     <textarea id="eventdetails" type='text' name="details"  class='form-control'></textarea>
-    
-    </div>
-    <div class='modal-footer'>
-      <button type='submit' class='btn btn-info'>save</button>
-      <button class='btn btn-dafault'>cancel</button>
-      
-    </div>
-    </form>
-  </div>
-  </main>
-  
-</div>
-
-<div id='search_result'>result</div>
-<button class='btn btn-primary'>Add Events</button>
+    </main>
 <!-- partial -->
   <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js'></script>
 <script src='https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js'></script><script  src="./js/script.js"></script>
-  <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js'></script>
-<script src='https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.18.0/moment.min.js'></script>
-<script src='https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/3.2.0/fullcalendar.min.js'></script>
-<script src='https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js'></script>
-<script src='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js'></script><script  src="./js/calenderscript.js"></script>
-
+<script>
+      document.getElementById("leaf").onclick = function() {
+        document.getElementById("modal").style.display="block";
+    }
+   
+    document.getElementById("btnclose").onclick = function() {
+        document.getElementById("modal").style.display="none";
+    }  
+</script>
 </body>
 </html>

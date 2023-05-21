@@ -2,6 +2,8 @@ package com.login.controller;
 
 import java.io.*;
 import java.sql.SQLException;
+import java.util.ArrayList;
+
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -12,6 +14,9 @@ import com.controller.HttpUtil;
 import com.login.service.*;
 import com.member.vo.*;
 
+// implements Controller 복사해서 추가
+
+// 여기부터 맨아래 } 하나 빼고 까지 복사
 public class loginController implements Controller {
 	
 	@Override
@@ -34,7 +39,7 @@ public class loginController implements Controller {
 			return;
 		}
 
-		Member member = new Member();
+		memberVo member = new memberVo();
 		member.setMember_id(id);
 		member.setMember_pw(passwd);
 
@@ -44,11 +49,11 @@ public class loginController implements Controller {
 		
 		// 다를 수도 있음  Y/N
 		boolean result = service.memberLogin(member);
-		
+	
 		
 		// Y인지 아닌지 여기서 확인될거야
 		
-		  if(result) { //인증된 사용자
+		  if(result) { //인증된 사용자	
 		         session.setAttribute("session_id", id);
 		         HttpUtil.forward(request, response, "/main.jsp");
 		      }else{ //인증되지 않은 사용자(로그인실패)

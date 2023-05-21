@@ -1,0 +1,79 @@
+html,
+body {
+  margin: 0;
+  padding: 0;
+}
+
+ul {
+  list-style-type: none;
+  -webkit-padding-start: 0;
+}
+
+.btn {
+  cursor: pointer;
+  font-size: 15px;
+  padding: 10px 20px;
+  border-radius: 2em;
+  background: none;
+  border: 1px solid;
+  transition: 250ms ease-out;
+}
+
+.btn:focus {
+  color: #b4fff2;
+  outline: none;
+}
+
+.frlst-container {
+  width: 400px;
+  min-height: 500px;
+  background-color: #fff;
+  border-radius: 1em;
+  padding: 15px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.frlst-header {
+  padding: 10px;
+  display: flex;
+  justify-content: space-around;
+}
+
+.frlst-body {
+  flex-grow: 1; 
+  max-height: 600px;
+  overflow-x: hidden;
+
+}
+
+.list-item-view {
+  padding-top: 20px;
+  padding-bottom: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.frlst-form {
+  margin-bottom: 10px;
+  display: flex;
+  justify-content: center;
+}
+
+.input-text {
+  height: 40px;
+  font-size: 15px;
+  border: 1px solid #dce4ec;
+  width: 100%;
+  margin-right: 15px;
+  border-radius: 2em;
+  padding: 5px 10px;
+  transition: border 250ms ease-out;
+}
+
+.input-text:focus {
+  border: 1px solid;
+  outline: none;
+}

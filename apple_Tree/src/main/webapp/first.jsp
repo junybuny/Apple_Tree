@@ -19,13 +19,13 @@
 			<a href="first.jsp">🍎Apple Tree</a>
 		</div>
 		<div style="width: 79%; height: 100px; float: right; text-align: right; display: inline-block;">
-			<a href="login.jsp">로그인</a> &nbsp; <a href="memberJoin.jsp">회원가입</a>
+			<a href="login.jsp">로그인</a> &nbsp; <a href="join.jsp">회원가입</a>
 		</div>
 	</div>
 
 	<br/><br/><br/><br/><br/><br/><br/>
-	<div style="text-align: center;">
-		<img src="https://cdn.pixabay.com/photo/2021/01/17/13/07/apple-tree-5925084_960_720.png" width="50%" height="50%">
+	<div style="display: block; margin: auto; width: 25%; height: 50%">
+		<img src="https://i.pinimg.com/originals/95/96/54/95965472bb5f010dc1250e3c8909229e.png">	
 	</div>
 
 </body>
