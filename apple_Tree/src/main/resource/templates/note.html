@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <title>CodePen - CSS Grid calendar</title>
+  <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Montserrat:100,300,400,500,700"/><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
+  <link rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css'><link rel="stylesheet" href="./style.css">
+  <link rel="stylesheet" href="./note.css">
+
+<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+<link href="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote-lite.min.css" rel="stylesheet">
+<script src="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote-lite.min.js"></script></head>
+<body>
+  <div class="wrapper">
+    <main role="main" class="container">
+      <form name="form" method="POST">
+        <div class="pt-1">
+        <input type="text" name="title" placeholder="제목을 입력하세요." style="border-radius:5px; width:100%; padding:5px;">
+        </div>
+        <div class="pt-1">
+          <textarea id="summernote" name="contents"></textarea>
+        </div>
+        <div id="summernote"></div>
+        <script>
+          $(document).ready(function() {
+              $('#summernote').summernote();
+          });
+        </script>
+        <div class="pt-1 text-right" align="right">
+          <button type="button" class="btn">등록</button>
+        </div>
+
+</main>
+<sidebar>
+  <div class="logo">볶음밥 
+    <img src="https://cdn0.iconfinder.com/data/icons/fall-6/64/apple-fruit-healty-food-30.png" alt="avatar">
+  </div>
+  <div class="avatar">
+    <div class="avatar__img">
+      <img src="https://cdn4.iconfinder.com/data/icons/linecon/512/photo-50.png" alt="avatar">
+    </div>
+    <div class="avatar__name">손윤정</div>
+  </div>
+  <nav class="menu">
+    <a class="menu__item" href="#">
+      <i class="menu__icon fa fa-home"></i>
+      <span class="menu__text">방명록</span>
+    </a>
+    <a class="menu__item menu__item--active"href="#">
+      <i class="menu__icon fa fa-envelope"></i>
+      <span class="menu__text">일기</span>
+    </a>
+    <a class="menu__item" href="#">
+      <i class="menu__icon fa fa-list"></i>
+      <span class="menu__text">독서리스트</span>
+    </a>
+    <a class="menu__item" href="#">
+      <i class="menu__icon fa fa-calendar"></i>
+      <span class="menu__text">일정</span>
+     </a>
+    </nav>
+    <div class="copyright">copyright &copy; 2023</div>
+  </sidebar>
+</div>
+
+</body>
+</html>
