@@ -1,3 +1,11 @@
+/* 사과 */
+.apple img {
+    display: block;
+    border: 5px;
+    width: 50px;
+    height: 50px;
+}
+
 /* 나뭇잎 */
 .leaf img {
     border: 5px;
@@ -55,6 +63,8 @@
     background-color: rgba(228, 228, 228, 0.2);
 }
 
+/* 방명록 작성 */
+
 .popup {
     display: none;
     z-index: 1;
@@ -97,6 +107,69 @@
     border: 1px solid #aaa;
 }
 .popup > .cmd .button:hover {
+    color: #fff;
+    border-color: #42d1b9;
+}
+
+.popup {
+    display: none;
+    z-index: 1;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    min-width: 300px;
+    max-width: 600px;
+    background-color: #ffffffa6;
+    border-radius: 15px;
+    box-shadow: 0 2px 55px -25px rgb(190, 190, 190);
+}
+
+/*작성된 방명록 */
+
+.popupMessage {
+    display: none;
+    z-index: 1;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    min-width: 300px;
+    max-width: 600px;
+    background-color: #ffffffa6;
+    border-radius: 15px;
+    box-shadow: 0 2px 55px -25px rgb(190, 190, 190);
+}
+
+.popupMessage > .title{
+    border-radius: 15px 15px 0 0;
+    min-height: 40px;
+    color: #fff;
+    background-color: rgb(100, 202, 172);
+    padding: 10px 15px;
+    box-sizing: border-box;
+    font-weight: bold;
+}
+.popupMessage > .content {
+    padding: 20px;
+    box-sizing: border-box;
+    -webkit-text-fill-color: black;
+}
+.popupMessage > .cmd {
+    bottom: 0;
+    min-height: 40px;
+    padding: 15px 15px;
+    box-sizing: border-box;
+    border-radius: 0 0 15px 15px;
+    min-height: 40px;
+    text-align: right;
+}
+.popupMessage > .cmd .button {
+    border-radius: 8px;
+    padding: 5px 10px;
+    border: 1px solid #aaa;
+}
+.popupMessage > .cmd .button:hover {
     color: #fff;
     border-color: #42d1b9;
 }
