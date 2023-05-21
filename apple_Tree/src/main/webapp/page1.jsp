@@ -7,13 +7,72 @@
   <title>CodePen - Internal Video Platform UI</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
 <link rel="stylesheet" href="./css/style.css">
-<link rel="stylesheet" href="./mainpage.css">
+<link rel="stylesheet" href="./css/mainpage.css">
 
 <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
 <link href="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote-lite.min.css" rel="stylesheet">
 <script src="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote-lite.min.js"></script></head>
 
+<script type="text/javascript">
+
+var boardArray = new Array();
+
+function Board(uContent) {
+  this.content = uContent;
+  this.writeDay = new Date();
+}
+
+Board.prototype.userLocalString=function() {
+  return this.writeDay.getFullYear()+"."
+  +(this.writeDay.getMonth()+1)+"."
+  +this.writeDay.getDate()+"."
+  +this.writeDay.getHours()+":"
+  +this.writeDay.getSeconds();
+}
+
+function main() {
+  var uContent=document.getElementById("uContent").value;
+
+  var len = boardArray.length;
+
+  boardArray[len] = new Board(uContent);
+
+  print(len);
+
+  clear();
+}
+
+funtion print(idx) {
+  var tableNode = document.getElementById("bbsTable");
+  var trNode=document.createElement("tr");
+     
+  trNode.appendChild(createTdNode((idx+1).toString()));
+  trNode.appendChild(createTdNode(boardArray[idx].userName));
+  trNode.appendChild(createTdNode(boardArray[idx].content));
+  trNode.appendChild(createTdNode(boardArray[idx].userLocalString()));
+      
+  tableNode.appendChild(trNode);
+   }
+   
+   function createTdNode(val)
+   {
+      var textNode = document.createTextNode(val);
+      var tdNode = document.createElement("td");
+      tdNode.appendChild(textNode);
+      return tdNode;
+   }
+   
+   function clear()
+   {
+	   	document.getElementById("uName").value="";
+	   	document.getElementById("uContent").value="";
+	   	document.getElementById("uName").focus();
+	   
+   }
+
+</script>
 </head>
+
 <body>
 <!-- partial:index.partial.html -->
  <link href="https://fonts.googleapis.com/css?family=DM+Sans:400,500,700&display=swap" rel="stylesheet">
@@ -175,18 +234,44 @@
            <div class="wrapper">
     <main role="main" class="container">
       <center>
-        <div class="center">
+       <div class="center">
           <div class="leaf" id="leaf" href="#" data-toggle="modal" data-target="#memoModal"><img src="./img/leaf.png"></div>
-          <div class="tree"><img src="./img/tree.png"></div>
+          <div style="position: relative;">
+            <div class="tree"><img src="./img/tree.png"></div>
+            <div style="position: absoulte; top: 5px; left: 5px;">
+            <div class="apple" id="apple" href="#" data-toggle="messageModal" data-target="#memoModal"><img src="./img/apple.png"></div>
+            </div>
+          </div>
+
         </div>
           <div class="popup" id="modal">
             <div class="title">방명록 작성</div>
             <div class="content">
-              <input text>
-            </div>
+              <table class="tbl">
+                <tr>
+                  <td>
+                  <input type="text" id="uContent" placeholder="내용을 입력해주세요" value="">
+                  </td>
+              </tr>
+             </table>
+              </div>
             <div class="cmd">
               <input type="button" id="btnclose" class="button" value="닫기">
-              <input type="button" id="btnsubmit" class="button" value="등록">
+              <input type="button" id="btnsubmit" class="button" value="등록" onclick="main()">
+            </div>
+          </div>
+          <div class="popupMessage" id="messageModal">
+            <div class="title">작성된 방명록</div>
+            <div class="content">
+              <table clas="tbl" id="bbsTable">
+                <tr>
+                  <th>안녕 잘지내? 벌써 여름이다</th>
+                </tr>
+              </table>
+            </div>
+            <div class="cmd">
+              <input type="button" id="btnclose2" class="button" value="닫기">
+              <input type="button" id="btndel" class="button" value="삭제">
             </div>
           </div>
       </center>
@@ -234,6 +319,18 @@
     document.getElementById("btnclose").onclick = function() {
         document.getElementById("modal").style.display="none";
     }  
+    document.getElementById("apple").onclick = function() {
+        document.getElementById("messageModal").style.display="block";
+    }
+
+    document.getElementById("btnclose2").onclick = function() {
+        document.getElementById("messageModal").style.display="none";
+    }   
+
+    document.getElementById("btndel").onclick = function() {
+        document.getElementById("apple").style.display="none";
+        document.getElementById("messageModal").style.display="none";
+    }   
 </script>
 </body>
 </html>
