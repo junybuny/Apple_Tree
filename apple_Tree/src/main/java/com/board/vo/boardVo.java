@@ -1,6 +1,6 @@
 package com.board.vo;
 
-public class Board {
+public class boardVo {
 	private String num;
 	private String title;
 	private String writer;

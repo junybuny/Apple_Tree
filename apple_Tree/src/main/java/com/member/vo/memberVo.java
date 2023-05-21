@@ -1,6 +1,6 @@
 package com.member.vo;
 
-public class Member {
+public class memberVo {
 	private String member_name;
 	private String member_id;
 	private String member_pw;
