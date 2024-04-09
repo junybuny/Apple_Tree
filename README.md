@@ -1,6 +1,7 @@
 # Apple Tree
 https://github.com/junybuny/Apple_Tree/assets/102280019/8d7eafff-9e7b-4115-87ba-c7f183e360cf
 > 사용자가 어려워 헤매거나 부담감을 느끼지 않는 편안한 SNS
+>
 > 개발 기간: 2023-04-05 ~ 2023-06-28 
 
 ## 개발환경
